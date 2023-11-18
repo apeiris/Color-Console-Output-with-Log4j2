@@ -1,0 +1,5 @@
+# Created at 2023-11-18T11:05:02.110
+Boot Manifest-JAR contains absolute paths in classpath 'D:\REPOS\apeiris\log4j2-example\target\test-classes'
+Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
+'other' has different root
+

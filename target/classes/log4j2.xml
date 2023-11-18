@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Appenders>
+        <!-- For colored output, make sure the disableAnsi=false in the PatternLayout  -->
+        <!-- Highlight entire line with the color specified for the Level -->
+        <!--
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout disableAnsi="false" 
+                pattern="%highlight{%d{HH:mm:ss.SSS} %-5level %logger{36}.%M() @%L - %msg%n}{FATAL=red blink,
+        ERROR=red, WARN=yellow bold, INFO=black, DEBUG=green bold, TRACE=blue}" />
+            </Console>
+        -->
+        <!-- Higlight only the Level specifier with the defined color -->
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout disableAnsi="false"
+                pattern="%d{HH:mm:ss.SSS} %highlight{%-5level}{FATAL=red bold, ERROR=red , WARN=yellow bold, INFO=green , DEBUG=blue bold, TRACE=blue} %logger.%M() @%-6L %msg%n" />
+        </Console>
+    </Appenders>
+    <Loggers>
+        <logger name="com.example" level="ALL" additivity="false">
+            <appender-ref ref="Console" />
+        </logger>
+    </Loggers>
+</Configuration>
