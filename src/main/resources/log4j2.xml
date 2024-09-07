@@ -12,9 +12,13 @@
         -->
         <!-- Higlight only the Level specifier with the defined color -->
         <Console name="Console" target="SYSTEM_OUT">
-            <PatternLayout disableAnsi="false"
-                pattern="%d{HH:mm:ss.SSS} %highlight{%-5level}{FATAL=red bold, ERROR=red , WARN=yellow bold, INFO=green , DEBUG=blue bold, TRACE=blue} %logger.%M() @%-6L %msg%n" />
-        </Console>
+           <!-- <PatternLayout disableAnsi="false"
+                pattern="%d{mm:ss.SSS} %highlight{%-5level}{FATAL=red bold, ERROR=red , WARN=yellow bold, INFO=green , DEBUG=blue bold, TRACE=blue} %logger.%M() @%-6L %msg%n" />
+        -->
+        <PatternLayout disableAnsi="false"
+        pattern="%style{%d{HH:mm:ss.SSS}}{white} %highlight{%-5level}{FATAL=red blink bold, ERROR=red blink , WARN=yellow blink bold, INFO=green, DEBUG=blue bold, TRACE=blue} %style{%logger.%M() @%-6L %msg%n}{white}" />
+  
+                </Console>
     </Appenders>
     <Loggers>
         <logger name="com.example" level="ALL" additivity="false">
